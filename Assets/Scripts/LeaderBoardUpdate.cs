@@ -19,7 +19,7 @@ public class LeaderBoardUpdate : MonoBehaviour
         sourceFile = new FileInfo(path);
 
         ReadFile();
-        WriteFile();
+            WriteFile();
 
     }
 
