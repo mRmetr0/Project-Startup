@@ -32,7 +32,7 @@ public class GoToDay : MonoBehaviour
         _day = FileManager.fileManager.hasDay(day);
         if (_day != null)
         {
-            FileManager.fileManager.GoToScene("statusScene");  
+            FileManager.fileManager.GoToScene("Status");  
         }
         else
         {
