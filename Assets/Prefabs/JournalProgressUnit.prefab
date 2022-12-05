@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 4276380140792629381}
   - component: {fileID: 3021589095631455728}
   m_Layer: 0
-  m_Name: ProgressUnit
+  m_Name: JournalProgressUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

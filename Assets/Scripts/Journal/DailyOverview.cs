@@ -34,7 +34,7 @@ public class DailyOverview : MonoBehaviour
         for (int i = 1; i < (21 > lines.Count/3 ? 21 : lines.Count/3);i+=3)
         {
             values.Add(float.Parse(lines[i]));
-            Debug.Log(lines[i]);
+            //Debug.Log(lines[i]);
         }
     }
 }
