@@ -24,6 +24,14 @@ public class GoalManager : MonoBehaviour
         for (int i = 0; i < files.Length/2; i++) {
             AssignDisplay(files[i*2], displays[i]);
         }
+
+        foreach (GoalDisplay display in displays)
+        {
+            if (display.info == null)
+            {
+                Destroy(display.gameObject);
+            }
+        }
     }
 
     private void AssignDisplay(FileInfo file, GoalDisplay display)

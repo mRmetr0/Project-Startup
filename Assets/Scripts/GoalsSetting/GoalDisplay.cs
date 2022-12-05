@@ -8,10 +8,11 @@ using UnityEngine.UI;
 
 public class GoalDisplay : MonoBehaviour
 {
-    private FileInfo _info;
+    private FileInfo _info = null;
     public FileInfo info
     {
         set { _info = value; }
+        get { return _info; }
     }
 
     [SerializeField]

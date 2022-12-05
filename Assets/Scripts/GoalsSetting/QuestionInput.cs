@@ -8,6 +8,7 @@ using System.IO;
 using Mono.Cecil.Cil;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEditor.Experimental;
 using UnityEditor.VersionControl;
 using UnityEngine.SceneManagement;
 
@@ -16,10 +17,9 @@ public class QuestionInput : MonoBehaviour
     private DirectoryInfo info;
 
     [SerializeField] private Button[] nextButtons;
-    [SerializeField] private SituationButton[] situationButtons;
     [SerializeField] private TMP_InputField[] answereFields;
-    [SerializeField] private Button AddButton;
-    [SerializeField] private Button backButton;
+    [SerializeField] private Button addButton;
+    [SerializeField] private Button addSubGoalButton;
 
     private List<string> lines;
     
@@ -43,8 +43,8 @@ public class QuestionInput : MonoBehaviour
         {
             field.onEndEdit.AddListener(UpdateTextField);
         }
-        AddButton.onClick.AddListener(OnAddGoalPress);
-        backButton.onClick.AddListener(OnBackButtonPress);
+        addButton.onClick.AddListener(OnAddGoalPress);
+        addSubGoalButton.onClick.AddListener(OnBackButtonPress);
         
         newValue = 0;
         oldValue = newValue;
@@ -65,6 +65,7 @@ public class QuestionInput : MonoBehaviour
             }
         }
     }
+    
     public void UpdateTextField(string arg)
     {
         if (arg != null)
@@ -73,7 +74,7 @@ public class QuestionInput : MonoBehaviour
         }
     }
 
-    public void ButtonWrite(string input)
+    public void ButtonWriteSituation(string input)
     {
         lines.Add(input);
         foreach (Slider slider in sliders)
@@ -81,6 +82,13 @@ public class QuestionInput : MonoBehaviour
             slider.value = 0;
             newValue  = 0;
         }
+        GoalSetter.goalSetter.NextScreen();
+    }
+
+    public void ButtonWriteSubGoal(string arg)
+    {
+        lines.Add(arg +"\n0");
+        text = null;
         GoalSetter.goalSetter.NextScreen();
     }
 
@@ -96,23 +104,16 @@ public class QuestionInput : MonoBehaviour
 
     public void OnBackButtonPress()
     {
-        if (text != null)
-        {
-            lines.Add(text);
             text = null;
             GoalSetter.goalSetter.PreviousScreen();
-        }
+        
     }
 
     public void OnAddGoalPress()
     {
-        if (text != null)
-        {
-            lines.Add(text);
-            text = null;
             CreateGoal();
             SceneManager.LoadScene("GoalMenuScene");
-        }
+        
     }
 
     public void CreateGoal()
@@ -136,5 +137,6 @@ public class QuestionInput : MonoBehaviour
         
         string fileName = "Goal"+(info.GetFiles().Length/2)+".txt";
         File.WriteAllText(path +fileName, content);
+        AssetDatabase.Refresh();
     }
 }

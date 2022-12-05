@@ -1,13 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SituationButton : MonoBehaviour
+public class AddSubGoalButton : MonoBehaviour
 {
-    [SerializeField]
     private Button b;
 
     private string _name;
@@ -24,7 +22,6 @@ public class SituationButton : MonoBehaviour
     private void OnButtonPress()
     {
         QuestionInput input = FindObjectOfType<QuestionInput>();
-        input.ButtonWriteSituation(_name);
+        input.ButtonWriteSubGoal(_name);
     }
-
 }

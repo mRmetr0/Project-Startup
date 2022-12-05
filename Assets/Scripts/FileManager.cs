@@ -12,7 +12,6 @@ public class FileManager : MonoBehaviour
     
     private FileInfo _sourceFile = null;
     private StreamReader _reader = null;
-    private StreamWriter _writer = null;
 
     public enum Paths
     {
@@ -122,7 +121,22 @@ public class FileManager : MonoBehaviour
         writer.Close();
     }
 
-    
+    public void SetFile(FileInfo _info, List<string> lines)
+    {
+        FileStream fs = _info.Open(FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
+        StreamWriter writer = new StreamWriter(fs);
+        fs.SetLength(0);
+        string text = "";
+        for (int i = 0; i < lines.Count; i++)
+        {
+            text += lines[i]+"\n";
+        }
+        writer.WriteLine(text);
+        writer.Close();
+        fs.Close();
+    }
+
+
     //CAN BE OPTIMIZED: by checking every day with a line instead of every single line;
     public List<string> HasDay(string day)
     {
