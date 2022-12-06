@@ -1,10 +1,8 @@
 At social gatherings
-asdfs
-5
-asd
+sdf
+3
+fgfd
 SubGoal1
-0
+100
 SubGoal2
-0
-SubGoal3
-0
+100

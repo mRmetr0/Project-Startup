@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TerrainTools;
 using UnityEngine.UI;
 
 public class SituationButton : MonoBehaviour
@@ -11,20 +12,25 @@ public class SituationButton : MonoBehaviour
     private Button b;
 
     private string _name;
-    public string name { get { return _name;} }
+
+    public string name
+    {
+        set { value = _name;}
+        get { return _name;}
+    }
     public Button button { get { return b; } }
 
     private void Start()
     {
         b = GetComponent<Button>();
-        _name = b.GetComponentInChildren<TMP_Text>().text;
         b.onClick.AddListener(OnButtonPress);
+        _name = b.GetComponentInChildren<TMP_Text>().text;
     }
 
     private void OnButtonPress()
     {
         QuestionInput input = FindObjectOfType<QuestionInput>();
-        input.ButtonWriteSituation(_name);
+        input.SituationButtonPress(this);
     }
 
 }

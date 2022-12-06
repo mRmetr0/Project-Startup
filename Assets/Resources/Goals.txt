@@ -5,10 +5,8 @@ sadf
 SubGoal3
 100
 SubGoal3
-30
+100
 SubGoal3
-0
-SubGoal3
-0
+100
 SubGoal3
 0

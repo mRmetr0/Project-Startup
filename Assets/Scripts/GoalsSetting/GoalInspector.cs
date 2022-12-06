@@ -16,15 +16,22 @@ public class GoalInspector : MonoBehaviour
     [SerializeField] private GameObject subGoalPrefab;
     [SerializeField] private TMP_Text title;
 
-    private FileInfo info;
-    
+    private FileInfo _info;
+
+    public FileInfo info
+    {
+        get { return _info; }
+    }
+
     private List<string> lines;
     private List<GameObject> prefabs;
     
-    private Slider currentSlider;
-    private int currentGoal = -1;
-    private int newValue = 0;
-    private int oldValue = 0;
+    private int _currentGoal = -1;
+
+    public int currentGoal
+    {
+        get { return _currentGoal; }
+    }
 
     private void Awake()
     {
@@ -33,15 +40,15 @@ public class GoalInspector : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (info != null && lines.Count>0)
+        if (_info != null && lines.Count>0)
         {
-            FileManager.fileManager.SetFile(info, lines);
+            FileManager.fileManager.SetFile(_info, lines);
         }
     }
 
     public void SetScene(FileInfo _info)
     {
-        info = _info;
+        this._info = _info;
         canvas = FindObjectOfType<Canvas>();
         lines = FileManager.fileManager.GetFile(_info);
         prefabs = new List<GameObject>();
@@ -54,41 +61,26 @@ public class GoalInspector : MonoBehaviour
             prefab.GetComponentInChildren<TMP_Text>().text = lines[i];
             Slider slider = prefab.GetComponentInChildren<Slider>();
             slider.value = int.Parse(lines[i + 1]);
-        }
 
-        for (int i = 0; i < prefabs.Count-1; i++)
-        {
-            GameObject prefab = prefabs[i];
-            Slider slider = prefab.GetComponentInChildren<Slider>();
-            
             if (currentGoal == -1 && slider.value < 100)
             {
-                slider.interactable = true;
-                currentGoal = i;
-                currentSlider = slider;
-                oldValue = newValue = (int)slider.value;
+                _currentGoal = i;
             }
             else
             {
+                prefab.GetComponentInChildren<Button>().interactable = false;
                 slider.interactable = false; 
                 if (slider.value == 100)
                 {
                     slider.GetComponentInChildren<Image>().color = Color.yellow;
-                    return;
                 }
-                slider.GetComponentInChildren<Image>().color = Color.gray;
+                else
+                {
+                    slider.GetComponentInChildren<Image>().color = Color.gray;
+                }
+
             }
         }
 
-    }
-
-    private void Update()
-    {
-        newValue = (int)currentSlider.value;
-        if (Input.GetMouseButtonUp(0) && newValue != oldValue)
-        {
-            lines[currentGoal + 1] = ((int)currentSlider.value).ToString();
-            oldValue = newValue;
-        }
     }
 }

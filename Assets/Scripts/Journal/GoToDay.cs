@@ -12,6 +12,7 @@ public class GoToDay : MonoBehaviour
     private enum Type  {
         Day,
         Goal,
+        SubGoal,
         Empty
     }
 
@@ -20,6 +21,7 @@ public class GoToDay : MonoBehaviour
 
     private List<string> _day;
     private FileInfo info;
+    private int progress;
     void Awake()
     {
         this.transform.parent = null;
@@ -42,7 +44,10 @@ public class GoToDay : MonoBehaviour
             case Type.Goal:
                 GoalInspector.goalInspector.SetScene(info);
                 break;
-                
+            case Type.SubGoal:
+                SubGoalInspector.subGoalInspector.SetScene(info, progress);
+                break;
+
         }
         Destroy(gameObject);
 
@@ -69,5 +74,13 @@ public class GoToDay : MonoBehaviour
         FileManager.fileManager.GoToScene("GoalInspectorScene");
     }
 
+    public void GoToSubGoalInspector(FileInfo _info, int _progress)
+    {
+        progress = _progress;
+        info = _info;
+        type = Type.SubGoal;
+        FileManager.fileManager.GoToScene("SubGoalInspector");
+
+    }
 
 }

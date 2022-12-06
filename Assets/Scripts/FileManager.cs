@@ -113,9 +113,9 @@ public class FileManager : MonoBehaviour
     {
         string text = "";
         StreamWriter writer = new StreamWriter(path, false);
-        foreach (string line in lines)
+        for(int i = 0; i < lines.Count-2; i++)
         {
-            text += line + "\n";
+            text += lines[i] + "\n";
         }
         writer.Write(text);
         writer.Close();
@@ -129,7 +129,7 @@ public class FileManager : MonoBehaviour
         string text = "";
         for (int i = 0; i < lines.Count; i++)
         {
-            text += lines[i]+"\n";
+            text += lines[i]+(i == lines.Count-1 ? "" : "\n");
         }
         writer.WriteLine(text);
         writer.Close();

@@ -11,12 +11,12 @@ public class GoalSetter : MonoBehaviour
     private Canvas canvas;
     [SerializeField] private List<GameObject> screens;
     private int progress = 0;
-    private void Awake()
+    private void Start()
     {
         for (int i = screens.Count-1; i >=0; i--)
         {
             GameObject screen = screens[i];
-            screen.SetActive(i == 0 ? true : false);
+            screen.SetActive(i == 0);
         }
         goalSetter = this;
         canvas = GetComponent<Canvas>();

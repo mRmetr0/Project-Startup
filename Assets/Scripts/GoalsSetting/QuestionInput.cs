@@ -11,6 +11,7 @@ using UnityEditor;
 using UnityEditor.Experimental;
 using UnityEditor.VersionControl;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class QuestionInput : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class QuestionInput : MonoBehaviour
 
     [SerializeField] private Button[] nextButtons;
     [SerializeField] private TMP_InputField[] answereFields;
+    [SerializeField] private SituationButton[] situationButtons;
+    [SerializeField] private AddSubGoalButton[] subGoalButtons;
     [SerializeField] private Button addButton;
     [SerializeField] private Button addSubGoalButton;
 
@@ -30,6 +33,7 @@ public class QuestionInput : MonoBehaviour
 
     private string text = null;
     private string path = "Assets/Resources/GoalFiles/";
+    private string subGoalPath = "Assets/Resources/SubGoalsList.txt";
     private void Awake()
     {
         lines = new List<string>();
@@ -74,15 +78,31 @@ public class QuestionInput : MonoBehaviour
         }
     }
 
-    public void ButtonWriteSituation(string input)
+    public void SituationButtonPress(SituationButton _button)
     {
-        lines.Add(input);
+        lines.Add(_button.name);
         foreach (Slider slider in sliders)
         {
             slider.value = 0;
             newValue  = 0;
         }
+        
         GoalSetter.goalSetter.NextScreen();
+
+        List<string> subGoals = FileManager.fileManager.GetFile(new FileInfo(subGoalPath));
+        for (int i = 0; i < subGoals.Count-1; i++)
+        {
+            if (subGoals[i] == _button.name)
+            {
+                Debug.Log("Thing found");
+                for (int j = 0; j < 4; j++)
+                {
+                    subGoalButtons[j].name = subGoals[(i+(j*2)+1)];
+                    Debug.Log("SubGoals: "+subGoals[i+(j*2)+1]+"index: "+(i+(j*2)+1)+"total: "+subGoals.Count +"newName: "+subGoalButtons[j].name);
+                }
+                return;
+            }
+        }
     }
 
     public void ButtonWriteSubGoal(string arg)
@@ -113,7 +133,11 @@ public class QuestionInput : MonoBehaviour
     {
             CreateGoal();
             SceneManager.LoadScene("GoalMenuScene");
-        
+    }
+
+    public void AjustSubGoals(SituationButton sButton)
+    {
+
     }
 
     public void CreateGoal()
