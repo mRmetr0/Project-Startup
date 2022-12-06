@@ -23,4 +23,8 @@ public class startAnim : MonoBehaviour
     {
         layer.active = false;
     }
+    public void enableLayer()
+    {
+        layer.active = true;
+    }
 }
