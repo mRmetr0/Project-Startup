@@ -59,7 +59,7 @@ public class GoToDay : MonoBehaviour
         if (_day != null)
         {
             type = Type.Day;   
-            FileManager.fileManager.GoToScene("statusScene");  
+            FileManager.fileManager.GoToScene("statusScene");
         }
         else
         {

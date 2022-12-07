@@ -6,7 +6,10 @@ using Unity.VisualScripting;
 public class DailyOverview : MonoBehaviour
 {
     [SerializeField]
+    private int offset;
+    [SerializeField]
     private JournalUnit unitPrefab;
+    [SerializeField]
     private Canvas canvas;
     void Start()
     {
@@ -23,7 +26,7 @@ public class DailyOverview : MonoBehaviour
         {
             JournalUnit unit = Instantiate(unitPrefab, canvas.transform);
             unit.SetUnit(lines[2+3*i], float.Parse(lines[1+i*3]));
-            unit.transform.position += new Vector3(0, -i*300, 0);
+            unit.transform.position += new Vector3(0, -i*offset, 0);
         }
     }
 
