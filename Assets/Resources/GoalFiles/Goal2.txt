@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Talking with strangers
 dfghj
 1
@@ -5,4 +6,13 @@ asdfghj
 Ask for the time
 100
 give out a compliment
+=======
+At school/work
+presenting
+5
+WHat if i screw up
+SubGoal1
+0
+SubGoal1
+>>>>>>> a9d985019713940dfc8943f38bc80afeda9a5584
 0

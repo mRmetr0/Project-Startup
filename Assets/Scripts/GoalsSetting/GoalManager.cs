@@ -22,6 +22,7 @@ public class GoalManager : MonoBehaviour
     {
         FileInfo[] files = info.GetFiles();
         for (int i = 0; i < Mathf.Min(files.Length/2, 3); i++) {
+
             AssignDisplay(files[i*2], displays[i]);
         }
 

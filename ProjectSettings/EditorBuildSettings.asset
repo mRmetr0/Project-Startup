@@ -6,12 +6,40 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+<<<<<<< HEAD
+=======
+    path: Assets/Scenes/Goals 1.unity
+    guid: ae586c6bf23ef2f45a22d049a9929b7a
+  - enabled: 1
+    path: Assets/Scenes/Journaling.unity
+    guid: 3b75252e7b5b99e4292f713764e93eab
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2cc3a1d9f772e5f4f852889fc602fab6
+  - enabled: 1
+    path: Assets/Scenes/Progress.unity
+    guid: e7bb4308dac1cba419ae1a2117286257
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 41fef2bfea92a3143854d2b3c8e81aea
+  - enabled: 1
+    path: Assets/Scenes/Status.unity
+    guid: 923ffd29c6e8014439bb0e7e2ba1f2a8
+  - enabled: 1
+    path: Assets/Scenes/Moment.unity
+    guid: 10f2364b1c41458438ddfcbd554d86b5
+  - enabled: 1
+    path: Assets/Scenes/Goals.unity
+    guid: 3fabc938bf5c5e342a63c815fbd2a0a2
+  - enabled: 1
+>>>>>>> a9d985019713940dfc8943f38bc80afeda9a5584
     path: Assets/Scenes/GoalSetting/AddGoalScene.unity
     guid: f5bdc2a50c748cd4799f9886b7997e04
   - enabled: 1
     path: Assets/Scenes/GoalSetting/GoalInspectorScene.unity
     guid: 0e8c0d87fc527ab41ae804035678162e
   - enabled: 1
+<<<<<<< HEAD
     path: Assets/Scenes/GoalSetting/GoalMenuScene.unity
     guid: 16a3cb16d85a0384a8cc3288821cf3f3
   - enabled: 1
@@ -26,6 +54,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Journal/StatusScene.unity
     guid: 79bc8226ca8644340874d88e09f85cee
+=======
+    path: Assets/Scenes/GoalSetting/SubGoalInspector.unity
+    guid: dfe2a121a76dd8048a1d27b73dca6c2f
+>>>>>>> a9d985019713940dfc8943f38bc80afeda9a5584
   m_configObjects:
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 86a64886ffc0f684fbe847af54536285, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2dff7dd34cb9f0f4e93b439d66093034, type: 2}
