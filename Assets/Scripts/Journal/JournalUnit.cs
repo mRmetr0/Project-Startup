@@ -23,7 +23,7 @@ public class JournalUnit : MonoBehaviour
     {
         GoToDay goToDay = gameObject.AddComponent<GoToDay>();
         goToDay.transform.parent = null;
-        goToDay.GoTo(title.text);
+        goToDay.GoToJournalDay(title.text);
     }
 
     public void SetUnit(string _day, float _mood)
@@ -31,6 +31,4 @@ public class JournalUnit : MonoBehaviour
         title.text = _day;
         slider.value = _mood;
     }
-
-
 }
