@@ -356,6 +356,7 @@ MonoBehaviour:
   _title: {fileID: 4797194189405297764}
   _progress: {fileID: 4797194188142761723}
   button: {fileID: 4797194188485933830}
+  goToScene: 
 --- !u!1 &4797194189405297766
 GameObject:
   m_ObjectHideFlags: 0
