@@ -1,14 +1,12 @@
-At school/work
-sdfg
-5
-sadf
-SubGoal3
+Talking with strangers
+df
+1
+gfgthyjn
+Ask for the time
 100
-SubGoal3
-30
-SubGoal3
+give out a compliment
+79
+place an order at a restaurant
 0
-SubGoal3
-0
-SubGoal3
+go to a public place
 0

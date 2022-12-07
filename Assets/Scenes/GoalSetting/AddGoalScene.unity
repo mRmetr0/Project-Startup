@@ -997,6 +997,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cdeac0dd1a9fb04eb0fe385225d6076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goalTexts:
+  - {fileID: 1965544241}
+  - {fileID: 484755014}
+  - {fileID: 1655694452}
+  - {fileID: 547901054}
   nextButtons:
   - {fileID: 1750875811}
   - {fileID: 2078579253}

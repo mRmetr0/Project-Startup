@@ -17,6 +17,8 @@ public class QuestionInput : MonoBehaviour
 {
     private DirectoryInfo info;
 
+    [SerializeField] private TMP_Text[] goalTexts; 
+    
     [SerializeField] private Button[] nextButtons;
     [SerializeField] private TMP_InputField[] answereFields;
     [SerializeField] private SituationButton[] situationButtons;
@@ -95,9 +97,11 @@ public class QuestionInput : MonoBehaviour
             if (subGoals[i] == _button.name)
             {
                 Debug.Log("Thing found");
+                
                 for (int j = 0; j < 4; j++)
                 {
-                    subGoalButtons[j].name = subGoals[(i+(j*2)+1)];
+                    goalTexts[j].text = subGoals[(i+(j*2)+1)];
+                    subGoalButtons[j].gameObject.SetActive(true);
                     Debug.Log("SubGoals: "+subGoals[i+(j*2)+1]+"index: "+(i+(j*2)+1)+"total: "+subGoals.Count +"newName: "+subGoalButtons[j].name);
                 }
                 return;

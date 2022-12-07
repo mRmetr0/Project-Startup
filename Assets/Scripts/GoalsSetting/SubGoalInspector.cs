@@ -13,12 +13,17 @@ public class SubGoalInspector : MonoBehaviour
     public static SubGoalInspector subGoalInspector;
 
     private FileInfo info;
+    private FileInfo subGoalInfo;
     private List<string> lines;
+    private List<string> subGoals;
     
-    [SerializeField] private Slider slider;
     [SerializeField] private TMP_Text title;
+    [SerializeField] private TMP_Text description;
+    [SerializeField] private Slider slider;
     [SerializeField] private Button b;
-
+    
+    private string subGoalList = "Assets/Resources/SubGoalsList.txt";
+    
     private int newValue;
     private int oldValue;
 
@@ -30,6 +35,8 @@ public class SubGoalInspector : MonoBehaviour
         //slider = FindObjectOfType<Slider>();
         //title = FindObjectOfType<TMP_Text>();
         b.onClick.AddListener(OnBackButtonClick);
+        subGoalInfo = new FileInfo(subGoalList);
+        subGoals = FileManager.fileManager.GetFile(subGoalInfo);
     }
 
     private void OnBackButtonClick()
@@ -48,6 +55,13 @@ public class SubGoalInspector : MonoBehaviour
         title.text = lines[_progress];
         slider.value = int.Parse(lines[_progress + 1]);
         newValue = oldValue = (int)slider.value;
+        for (int i = 0; i < subGoals.Count-1; i++) {
+            if (title.text == subGoals[i])
+            {
+                description.text = subGoals[i+1];
+                return;
+            }
+        }
     }
 
     void Update()
