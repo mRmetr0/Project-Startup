@@ -16,7 +16,8 @@ public class SubGoalInspector : MonoBehaviour
     private FileInfo subGoalInfo;
     private List<string> lines;
     private List<string> subGoals;
-    
+
+    [SerializeField] private GameObject popUpPrefab;
     [SerializeField] private TMP_Text title;
     [SerializeField] private TMP_Text description;
     [SerializeField] private Slider slider;
@@ -24,7 +25,6 @@ public class SubGoalInspector : MonoBehaviour
     
     private string subGoalList = "Assets/Resources/SubGoalsList.txt";
     
-    private int newValue;
     private int oldValue;
 
     private int progress;
@@ -44,6 +44,8 @@ public class SubGoalInspector : MonoBehaviour
         FileManager.fileManager.SetFile(info, lines);
         AssetDatabase.Refresh();
         GoToDay g = gameObject.AddComponent<GoToDay>();
+        if (slider.value == 100)
+            Instantiate(popUpPrefab);
         g.GoToGoalInspector(info);
     }
 
@@ -54,7 +56,7 @@ public class SubGoalInspector : MonoBehaviour
         lines = FileManager.fileManager.GetFile(_info);
         title.text = lines[_progress];
         slider.value = int.Parse(lines[_progress + 1]);
-        newValue = oldValue = (int)slider.value;
+        oldValue = (int)slider.value;
         for (int i = 0; i < subGoals.Count-1; i++) {
             if (title.text == subGoals[i])
             {

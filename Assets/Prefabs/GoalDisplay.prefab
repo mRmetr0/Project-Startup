@@ -493,6 +493,9 @@ MonoBehaviour:
   _title: {fileID: 2840816714347686554}
   _progress: {fileID: 2840816715215724549}
   button: {fileID: 2840816715577167352}
+<<<<<<< HEAD
+  goToScene: AddGoalScene
+=======
 --- !u!1 &3357588141487912721
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,3 +724,4 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+>>>>>>> a9d985019713940dfc8943f38bc80afeda9a5584

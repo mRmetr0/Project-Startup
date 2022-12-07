@@ -6,6 +6,21 @@ EditorUserSettings:
   serializedVersion: 4
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
+<<<<<<< HEAD
+      value: 5057575e04560d5f5c5d097413740c4414161e2f2a7e7365792d4b35e6e2373c
+      flags: 0
+    RecentlyUsedSceneGuid-1:
+      value: 53540c055551510c0b0d597047225d4447161d727c7c7663787f4a6bb3b6663d
+      flags: 0
+    RecentlyUsedSceneGuid-2:
+      value: 0757515404045b0a0c595a26147b0f444e16492e7e7f24677e2d1e32b4e3663e
+      flags: 0
+    RecentlyUsedSceneGuid-3:
+      value: 520755550657580d0956592340700744174f1b297f7a7e68757b4c30e4b3326b
+      flags: 0
+    UnityRemoteDevice:
+      value: 225f4d46245b0d4902070862342649191512
+=======
       value: 0254015e53565f590b5c5f271671594443164a78287872692c704461bbe26339
       flags: 0
     RecentlyUsedSceneGuid-1:
@@ -43,6 +58,7 @@ EditorUserSettings:
       flags: 0
     UnityRemoteResolution:
       value: 2d5e460b0459
+>>>>>>> a9d985019713940dfc8943f38bc80afeda9a5584
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650

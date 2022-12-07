@@ -5,8 +5,8 @@ gfgthyjn
 Ask for the time
 100
 give out a compliment
-79
+100
 place an order at a restaurant
-0
+100
 go to a public place
-0
+100
