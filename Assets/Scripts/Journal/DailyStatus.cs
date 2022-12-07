@@ -41,7 +41,7 @@ public class DailyStatus : MonoBehaviour
         UpdateJournal();
     }
 
-    void UpdateJournal()
+    public void UpdateJournal()
     {
         List<string> lines = FileManager.fileManager.GetFile();
         if (!FileManager.fileManager.SameDay())
