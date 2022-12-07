@@ -413,3 +413,4 @@ MonoBehaviour:
   _title: {fileID: 2840816714347686554}
   _progress: {fileID: 2840816715215724549}
   button: {fileID: 2840816715577167352}
+  goToScene: AddGoalScene

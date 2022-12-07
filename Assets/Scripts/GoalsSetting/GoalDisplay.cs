@@ -34,6 +34,8 @@ public class GoalDisplay : MonoBehaviour
     [SerializeField]
     private Button button;
 
+    [SerializeField] private string goToScene;
+
     void Start()
     {
         button.onClick.AddListener(OnButtonPress);
@@ -43,8 +45,13 @@ public class GoalDisplay : MonoBehaviour
 
     public void OnButtonPress()
     {
-        GoToDay inspector = gameObject.AddComponent<GoToDay>();
-        inspector.GoToGoalInspector(_info);
+        if (info != null)
+        {
+            GoToDay inspector = gameObject.AddComponent<GoToDay>();
+            inspector.GoToGoalInspector(_info);
+        } else {
+            FileManager.fileManager.GoToScene(goToScene);
+        }
     }
 
     public string GetData()
