@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoalDisplay 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -392,6 +396,10 @@ PrefabInstance:
     - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Name
       value: GoalDisplay 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x
@@ -586,6 +594,10 @@ PrefabInstance:
     - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Name
       value: GoalDisplay 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x
@@ -2050,6 +2062,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoalDisplay 4
       objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2549,6 +2565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoalDisplay 7
       objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2891,6 +2911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoalDisplay 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3137,10 +3161,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1054889736}
     m_Modifications:
-    - target: {fileID: 1189894889541142300, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Name
       value: GoalDisplay 1
@@ -3228,22 +3248,6 @@ PrefabInstance:
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437996351768482387, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437996351768482387, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437996351768482387, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5437996351768482387, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
@@ -3516,6 +3520,10 @@ PrefabInstance:
     - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Name
       value: GoalDisplay 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x
@@ -4570,6 +4578,10 @@ PrefabInstance:
     - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Name
       value: GoalDisplay 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4797194188485933880, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4797194188485933881, guid: b00ece3b121827b4a9fde3b57031c8d6, type: 3}
       propertyPath: m_Pivot.x

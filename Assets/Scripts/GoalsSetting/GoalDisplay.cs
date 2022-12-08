@@ -44,6 +44,7 @@ public class GoalDisplay : MonoBehaviour
 
     void Awake()
     {
+        button.GetComponent<Button>();
         button.onClick.AddListener(OnButtonPress);
     }
 
