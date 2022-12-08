@@ -3366,7 +3366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 814339716}
-  goToScene: Goals
+  goToScene: GoalMenuScene
 --- !u!1 &837251013
 GameObject:
   m_ObjectHideFlags: 0

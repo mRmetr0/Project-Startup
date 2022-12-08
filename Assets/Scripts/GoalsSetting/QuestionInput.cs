@@ -136,7 +136,7 @@ public class QuestionInput : MonoBehaviour
     public void OnAddGoalPress()
     {
             CreateGoal();
-            SceneManager.LoadScene("Goals");
+            SceneManager.LoadScene("GoalMenuScene");
     }
 
     public void AjustSubGoals(SituationButton sButton)
