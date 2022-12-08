@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 1127431172}
-  goToScene: Goals
+  goToScene: GoalMenuScene
 --- !u!114 &1127431172
 MonoBehaviour:
   m_ObjectHideFlags: 0
