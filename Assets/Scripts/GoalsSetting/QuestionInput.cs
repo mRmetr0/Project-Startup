@@ -3,15 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; 
 using System.IO;
 using Mono.Cecil.Cil;
 using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Experimental;
-using UnityEditor.VersionControl;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Slider = UnityEngine.UI.Slider;
 
 public class QuestionInput : MonoBehaviour
 {
@@ -100,8 +99,8 @@ public class QuestionInput : MonoBehaviour
                 
                 for (int j = 0; j < 4; j++)
                 {
-                    goalTexts[j].text = subGoals[(i+(j*2)+1)];
                     subGoalButtons[j].gameObject.SetActive(true);
+                    goalTexts[j].text = subGoals[(i+(j*2)+1)];
                     Debug.Log("SubGoals: "+subGoals[i+(j*2)+1]+"index: "+(i+(j*2)+1)+"total: "+subGoals.Count +"newName: "+subGoalButtons[j].name);
                 }
                 return;
@@ -165,6 +164,7 @@ public class QuestionInput : MonoBehaviour
         
         string fileName = "Goal"+(info.GetFiles().Length/2)+".txt";
         File.WriteAllText(path +fileName, content);
-        AssetDatabase.Refresh();
+        //Resources.Load(fileName);
+        Resources.LoadAll("GoalFiles");
     }
 }

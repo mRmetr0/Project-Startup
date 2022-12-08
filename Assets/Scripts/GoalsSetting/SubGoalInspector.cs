@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -50,7 +49,7 @@ public class SubGoalInspector : MonoBehaviour
     private void OnBackButtonClick()
     {
         FileManager.fileManager.SetFile(info, lines);
-        AssetDatabase.Refresh();
+        Resources.LoadAll("Assets/Resources/GoalFiles");
         GoToDay g = gameObject.AddComponent<GoToDay>();
         if (slider.value == 100)
             Instantiate(popUpPrefab);
