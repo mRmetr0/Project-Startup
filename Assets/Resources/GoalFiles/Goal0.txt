@@ -7,6 +7,6 @@ Ask for the time
 give out a compliment
 100
 place an order at a restaurant
-100
+52
 go to a public place
-100
+0

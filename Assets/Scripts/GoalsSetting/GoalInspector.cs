@@ -57,10 +57,11 @@ public class GoalInspector : MonoBehaviour
         {
             GameObject prefab = Instantiate(subGoalPrefab, canvas.transform);
             prefabs.Add(prefab);
-            prefab.transform.position += new Vector3(0, 500 - (i*125), 0);
+            prefab.transform.position += new Vector3(0, 800 - (i*175), 0);
             prefab.GetComponentInChildren<TMP_Text>().text = lines[i];
             Slider slider = prefab.GetComponentInChildren<Slider>();
             slider.value = int.Parse(lines[i + 1]);
+            Debug.Log(slider.value);
 
             if (currentGoal == -1 && slider.value < 100)
             {
@@ -68,8 +69,6 @@ public class GoalInspector : MonoBehaviour
             }
             else
             {
-                prefab.GetComponentInChildren<Button>().interactable = false;
-                slider.interactable = false; 
                 if (slider.value == 100)
                 {
                     slider.GetComponentInChildren<Image>().color = Color.yellow;
@@ -78,6 +77,8 @@ public class GoalInspector : MonoBehaviour
                 {
                     slider.GetComponentInChildren<Image>().color = Color.gray;
                 }
+                prefab.GetComponentInChildren<Button>().interactable = false;
+                slider.interactable = false; 
 
             }
         }

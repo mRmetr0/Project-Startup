@@ -38,6 +38,14 @@ public class SubGoalInspector : MonoBehaviour
         subGoalInfo = new FileInfo(subGoalList);
         subGoals = FileManager.fileManager.GetFile(subGoalInfo);
     }
+    
+    private void OnDestroy()
+    {
+        if (info != null && lines.Count>0)
+        {
+            FileManager.fileManager.SetFile(info, lines);
+        }
+    }
 
     private void OnBackButtonClick()
     {
