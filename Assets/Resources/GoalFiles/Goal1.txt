@@ -1,19 +1,8 @@
-<<<<<<< HEAD
-Talking with strangers
-sdfg
-4
-dfg
-Ask for the time
-100
-place an order at a restaurant
-100
-=======
 At school/work
 presenting
 5
 WHat if i screw up
 SubGoal1
-0
+100
 SubGoal1
-0
->>>>>>> a9d985019713940dfc8943f38bc80afeda9a5584
+100

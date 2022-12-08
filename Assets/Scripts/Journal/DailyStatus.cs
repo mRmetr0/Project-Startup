@@ -32,12 +32,16 @@ public class DailyStatus : MonoBehaviour
     private void Start()
     {
         input = GameObject.FindObjectOfType<TMP_InputField>();
+        Debug.Log(input);
         input.onEndEdit.AddListener(DoSomething);
     }
 
     private void DoSomething(string arg)
     {
         notes = arg;
+        if (notes == "")
+            notes = ".";
+        Debug.Log(notes);
         UpdateJournal();
     }
 
@@ -57,6 +61,11 @@ public class DailyStatus : MonoBehaviour
             lines[lines.Count - 2] = mood.ToString();
             lines[lines.Count - 1] = notes;
         }
+
+        foreach (string s in lines) {
+            //Debug.Log(s);
+        }
+
         FileManager.fileManager.SetFile(lines);
     }
 

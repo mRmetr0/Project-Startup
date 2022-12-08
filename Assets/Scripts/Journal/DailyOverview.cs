@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,8 @@ public class DailyOverview : MonoBehaviour
         for (int i = 0; i < lines.Count/3; i++)
         {
             JournalUnit unit = Instantiate(unitPrefab, canvas.transform);
+            Debug.Log(lines[2+3*i]);
+            Debug.Log(lines[1+i*3]);
             unit.SetUnit(lines[2+3*i], float.Parse(lines[1+i*3]));
             unit.transform.position += new Vector3(0, -i*offset, 0);
         }

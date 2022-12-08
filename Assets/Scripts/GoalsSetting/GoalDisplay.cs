@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GoalDisplay : MonoBehaviour
@@ -24,23 +25,26 @@ public class GoalDisplay : MonoBehaviour
     }
 
     [SerializeField]
-    private TMP_Text _progress;
+    private TMP_Text _progressText;
     public string progress
     {
-        get { return _progress.text; }
-        set { _progress.text = value.ToString(); }
+        get { return _progressText.text; }
+        set { _progressText.text = value.ToString(); }
     }
 
     [SerializeField]
     private Button button;
 
+    [SerializeField] private Image[] images;
+
+    [SerializeField] private Image potImage;
+    
+    
     [SerializeField] private string goToScene;
 
-    void Start()
+    void Awake()
     {
         button.onClick.AddListener(OnButtonPress);
-        /*GoalManager manager = FindObjectOfType<GoalManager>();
-        manager.AddDisplay(this);*/
     }
 
     public void OnButtonPress()
@@ -57,5 +61,26 @@ public class GoalDisplay : MonoBehaviour
     public string GetData()
     {
         return title + " & " +progress;
+    }
+
+    public void setDisplay(int percent, FileInfo _info)
+    {
+        info = _info;
+        List<string> lines = FileManager.fileManager.GetFile(info);
+        _title.text = lines[0];
+        images[0].gameObject.SetActive(false);
+        potImage.gameObject.SetActive(true);
+        if (percent < 33)
+        {
+            images[1].gameObject.SetActive(true);
+        } 
+        else if (percent == 100)
+        {
+            images[3].gameObject.SetActive(true);
+        }
+        else
+        {
+            images[2].gameObject.SetActive(true);
+        }
     }
 }

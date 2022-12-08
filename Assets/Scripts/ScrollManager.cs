@@ -11,7 +11,8 @@ public class ScrollManager : MonoBehaviour
     private float mouseYonDragStart = 0;
 
     public void Start()
-    {      
+    {
+        if (scrollView == null) return;
         scrollView.RegisterCallback<MouseDownEvent>(OnMouseDown, TrickleDown.TrickleDown);
         scrollView.RegisterCallback<MouseUpEvent>(OnMouseUp, TrickleDown.TrickleDown);
         scrollView.RegisterCallback<MouseMoveEvent>(OnMouseMove, TrickleDown.TrickleDown);

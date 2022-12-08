@@ -5030,7 +5030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b43c98b65049c6c4ca48fe1fbb395319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 200
+  offset: 100
   unitPrefab: {fileID: 7468825189313750899, guid: c2cd0d33a1852064a9c5866a8d7a7075, type: 3}
   canvas: {fileID: 473730228}
 --- !u!4 &1947479115

@@ -21,7 +21,7 @@ public class GoalManager : MonoBehaviour
     private void Start()
     {
         FileInfo[] files = info.GetFiles();
-        for (int i = 0; i < Mathf.Min(files.Length/2, 3); i++) {
+        for (int i = 0; i < Mathf.Min(files.Length/2, displays.Count); i++) {
 
             AssignDisplay(files[i*2], displays[i]);
         }
@@ -46,7 +46,7 @@ public class GoalManager : MonoBehaviour
             lines.Add(line);
         }
         reader.Close();
-        display.title = lines[0];
+        //display.title = lines[0];
         float currentProgress = 0;
         float maxProgress = 0;
         for (int i = lines.Count-1; i >= 4; i-=2)
@@ -54,8 +54,9 @@ public class GoalManager : MonoBehaviour
             currentProgress += float.Parse(lines[i]);
             maxProgress += 100;
         }
-        display.progress = "Progress: "+(int)((currentProgress/maxProgress)*100) + "%";
-        display.info = file;
+        //display.progress = "Progress: "+(int)((currentProgress/maxProgress)*100) + "%";
+        //display.info = file;
+        display.setDisplay((int)((currentProgress/maxProgress)*100), file);
         Destroy(gameObject);
     }
 
